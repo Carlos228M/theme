@@ -1,0 +1,296 @@
+/*------------------------*/
+/*ESTRUCTURA 228 MARKETING*/
+/*------------------------*/
+
+/*VARS*/
+:root{
+  /*Estructura*/
+  --movil-max: 500px;--tablet-max: 1024px;--main-column: 1300px;
+  /*Espacios*/
+  --padding: 20px;--max-pad: 80px;--min-pad: 5px;--margin: 30px;--max-margin: 80px;--min-margin: 10px;
+  /*Animación*/
+  --transition: 0.4s; --dynamic_bg-time: 10s;
+}
+
+
+/*FUENTES*/
+.a-center{text-align: center;}
+.white-text, .white-text *{color: white;}
+
+
+
+/****************************************
+ESTRUCTURAESTRUCTURAESTRUCTURAESTRUCTURA
+TURAESTRUCTURAESTRUCTURAESTRUCTURAESTRUC  ESTRUCTURA
+ESTRUCTURAESTRUCTURAESTRUCTURAESTRUCTURA
+****************************************/
+
+/*CONTENEDOR FULL Y BOX*/
+.full-no-pad{width: 100%;}
+.full-box{margin:0px auto; padding: 20px;}
+.full-box.no-pad{padding: 0px;}
+@media only screen and (min-width: 1300px) {
+  .full-box{max-width: var(--main-column);}
+}
+
+@media only screen and (max-width: 1300px) {
+  .full-box{padding: 20px 35px;}
+}
+
+@media only screen and (max-width: 500px){
+  .full-box .full-no-pad-m{width: 100vw; left: -20px;}
+  .full-box{padding: 25px;}
+}
+.full-box.no-pad-top{padding-top:0px;}
+.full-box.no-pad-sides{padding-left: 0px; padding-right: 0px;}
+.full-box.no-pad-top-btm{padding-top:0px!important; padding-bottom: 0px!important;}
+.full-box.no-pad-btm{padding-bottom:0px!important;}
+
+@media only screen and (min-width:1300px;){
+  .full-box.d-no-pad-top{padding-top:0px;}
+  .full-box.d-no-pad-sides{padding-left: 0px; padding-right: 0px;}
+  .full-box.d-no-pad-top-btm{padding-top:0px!important; padding-bottom: 0px!important;}
+  .full-box.d-no-pad-btm{padding-bottom:0px!important;}
+}
+
+
+/*FLEXIS*/
+/*Contenedores: Que tengan todos sus bloques hijos de la misma proporción*/
+div[class*='flexi']{display: flex; flex-wrap: wrap; position: relative;}
+
+  div[class*='flexi-1']>*{width:100%;}
+  div[class*='flexi-2']>*{width:50%;}
+  div[class*='flexi-3']>*{width:33.33%;}
+  div[class*='flexi-4']>*{width:25%;}
+  div[class*='flexi-5']>*{width:20%;}
+  div[class*='flexi-6']>*{width:16.666%;}
+
+@media only screen and (min-width: 501px){
+  div[class*='flexi-1-2']>*{width:50%;}  div[class*='flexi-1-3']>*{width:33.33%;} div[class*='flexi-1-4']>*{width:25%;}
+  div[class*='flexi-2-3']>*{width:33.33%;} div[class*='flexi-2-4']>*{width:25%;} div[class*='flexi-2-5']>*{width:25%;}
+  div[class*='flexi-3-4']>*{width:25%;} div[class*='flexi-3-5']>*{width:20%;} div[class*='flexi-3-6']>*{width:16.666%;}
+  div[class*='flexi-4-5']>*{width:20%;} div[class*='flexi-4-6']>*{width:16.666%;} div[class*='flexi-4-7']>*{width:14.285%;} div[class*='flexi-4-8']>*{width:12.5%;}
+  div[class*='flexi-5-6']>*{width:16.666%;} div[class*='flexi-5-7']>*{width:14.285%;} div[class*='flexi-5-8']>*{width:12.5%;}  div[class*='flexi-5-9']>*{width:11.111%;}
+  div[class*='flexi-6-7']>*{width:14.285%;} div[class*='flexi-6-8']>*{width:12.5%;} div[class*='flexi-6-9']>*{width:11.111%;}  div[class*='flexi-6-0']>*{width:10%;}
+}
+
+@media only screen and (min-width: 1025px){
+  div.flexi-1-1-2>*{width:50%;}
+  div.flexi-1-1-3>*, div.flexi-1-2-3>*, div.flexi-2-2-3>*{width:33.33%;}
+  div.flexi-1-1-4>*, div.flexi-1-2-4>*, div.flexi-1-3-4>*, div.flexi-2-2-4>*, div.flexi-2-3-4>*{width:25%;}
+  div.flexi-1-1-5>*, div.flexi-1-2-5>*, div.flexi-1-3-5>*, div.flexi-1-4-5>*, div.flexi-2-2-5>*, div.flexi-2-3-5>*, div.flexi-2-4-5>*{width:20%;}
+  div.flexi-1-1-6>*, div.flexi-1-2-6>*, div.flexi-1-3-6>*, div.flexi-1-4-6>*, div.flexi-1-5-6>*, div.flexi-2-2-6>*, div.flexi-2-3-6>*, div.flexi-2-4-6>*, div.flexi-2-5-6>*{width:16.666%;}
+  div.flexi-2-4-8>*{width: 12.5%;}
+}
+
+/*Columnas dentro de flexis que tienen que tener un padding para no juntarse el contenido y donde no vale full-box*/
+.col-p-i{padding-left: var(--padding-col);} .col-p-d{padding-right: var(--padding-col);}
+
+/*Bloques: Los bloques de un contenedor tienen un ancho determinado*/
+/*Móvil*/
+  .flx-m-4-4{width: 100%;} .flx-m-3-4{width: 75.000%;} .flx-m-2-4{width: 50.000%;} .flx-m-1-4{width: 25.000%;}
+  .flx-m-3-3{width: 100%;} .flx-m-2-3{width: 66.666%;} .flx-m-1-3{width: 33.333%;}
+  .flx-m-2-2{width: 100%;} .flx-m-1-2{width: 50.000%;}
+  .flx-m-1{width: 100%;}
+/*Tablet*/
+@media only screen and (min-width: 501px){
+  .flx-t-6-6{width: 100%;} .flx-t-5-6{width: 83.333%;} .flx-t-4-6{width: 66.666%;} .flx-t-3-6{width: 50.000%;} .flx-t-2-6{width: 33.333%;} .flx-t-1-6{width: 16.666%;}
+  .flx-t-5-5{width: 100%;} .flx-t-4-5{width: 80.000%;} .flx-t-3-5{width: 60.000%;} .flx-t-2-5{width: 40.000%;} .flx-t-1-5{width: 20.000%;}
+  .flx-t-4-4{width: 100%;} .flx-t-3-4{width: 75.000%;} .flx-t-2-4{width: 50.000%;} .flx-t-1-4{width: 25.000%;}
+  .flx-t-3-3{width: 100%;} .flx-t-2-3{width: 66.666%;} .flx-t-1-3{width: 33.333%;}
+  .flx-t-2-2{width: 100%;} .flx-t-1-2{width: 50.000%;}
+  .flx-t-1{width: 100%;}
+}
+/*Desktop*/
+@media only screen and (min-width: 1025px) {
+  .flx-d-0-0{width: 100%;} .flx-d-9-0{width: 90.000%;} .flx-d-8-0{width: 80.000%;} .flx-d-7-0{width: 70.000%;} .flx-d-6-0{width: 60.000%;} .flx-d-5-0{width: 50.000%;} .flx-d-4-0{width: 40.000%;} .flx-d-3-0{width: 30.000%;} .flx-d-2-0{width: 20.000%;} .flx-d-1-0{width:10.000%;}
+  .flx-d-9-9{width: 100%;} .flx-d-8-9{width: 88.888%;} .flx-d-7-9{width: 77.777%;} .flx-d-6-9{width: 66.666%;} .flx-d-5-9{width: 55.555%;} .flx-d-4-9{width: 44.444%;} .flx-d-3-9{width: 33.333%;} .flx-d-2-9{width: 22.222%;} .flx-d-1-9{width: 11.111%;}
+  .flx-d-8-8{width: 100%;} .flx-d-7-8{width: 87.500%;} .flx-d-6-8{width: 75.000%;} .flx-d-5-8{width: 62.500%;} .flx-d-4-8{width: 50.000%;} .flx-d-3-8{width: 37.500%;} .flx-d-2-8{width: 25.000%;} .flx-d-1-8{width: 12.500%;}
+  .flx-d-7-7{width: 100%;} .flx-d-6-7{width: 85.741%;} .flx-d-5-7{width: 71.429%;} .flx-d-4-7{width: 57.143%;} .flx-d-3-7{width: 42.857%;} .flx-d-2-7{width: 28.571%;} .flx-d-1-7{width: 14.285%;}
+  .flx-d-6-6{width: 100%;} .flx-d-5-6{width: 83.333%;} .flx-d-4-6{width: 66.666%;} .flx-d-3-6{width: 50.000%;} .flx-d-2-6{width: 33.333%;} .flx-d-1-6{width: 16.666%;}
+  .flx-d-5-5{width: 100%;} .flx-d-4-5{width: 80.000%;} .flx-d-3-5{width: 60.000%;} .flx-d-2-5{width: 40.000%;} .flx-d-1-5{width: 20.000%;}
+  .flx-d-4-4{width: 100%;} .flx-d-3-4{width: 75.000%;} .flx-d-2-4{width: 50.000%;} .flx-d-1-4{width: 25.000%;}
+  .flx-d-3-3{width: 100%;} .flx-d-2-3{width: 66.666%;} .flx-d-1-3{width: 33.333%;}
+  .flx-d-2-2{width: 100%;} .flx-d-1-2{width: 50.000%;}
+  .flx-d-1{width: 100%;}
+}
+
+@media only screen and (max-width: 500px){.flx-m-100{width: 100%!important;}}
+@media only screen and (max-width: 1024px){.flx-t-100{width: 100%!important;}}
+
+/*Semifull*/
+/*La fila que va a ser semifull tiene tres clases "semifull-row", "semifull-right/left" y "semifull-3-0/4-0/5-0/6-0/7-0" (dependiendo del ancho de la col full)*/
+/*La columna full tiene clase "semifull-full-col" y la columna box tiene clase "semifull-box-col"*/
+.semifull-row{display: flex; min-width: 100vw; flex-wrap: wrap;}
+.semifull-left{justify-content: flex-start;}
+.semifull-right{justify-content: flex-end;}
+.semifull-left.semifull-3-0>div:first-of-type{min-width: 30%; width: 30%;}
+.semifull-left.semifull-4-0>div:first-of-type{min-width: 40%; width: 40%;}
+.semifull-left.semifull-5-0>div:first-of-type{min-width: 50%; width: 50%;}
+.semifull-left.semifull-6-0>div:first-of-type{min-width: 60%; width: 60%;}
+.semifull-left.semifull-7-0>div:first-of-type{min-width: 70%; width: 70%;}
+
+.semifull-right.semifull-3-0>div:last-of-type{min-width: 30%; width: 30%;}
+.semifull-right.semifull-4-0>div:last-of-type{min-width: 40%; width: 40%;}
+.semifull-right.semifull-5-0>div:last-of-type{min-width: 50%; width: 50%;}
+.semifull-right.semifull-6-0>div:last-of-type{min-width: 60%; width: 60%;}
+.semifull-right.semifull-7-0>div:last-of-type{min-width: 70%; width: 70%;}
+
+@media only screen and (min-width:1024px){
+  .semifull-3-0>.semifull-box-col{width: calc(100vw * 0.7);}
+  .semifull-4-0>.semifull-box-col{width: calc(100vw * 0.6);}
+  .semifull-5-0>.semifull-box-col{width: calc(100vw * 0.5);}
+  .semifull-6-0>.semifull-box-col{width: calc(100vw * 0.4);}
+  .semifull-7-0>.semifull-box-col{width: calc(100vw * 0.3);}
+}
+
+@media only screen and (min-width:1299px){
+  .semifull-3-0>.semifull-box-col{width: calc(var(--main-column) * 0.7);}
+  .semifull-4-0>.semifull-box-col{width: calc(var(--main-column) * 0.6);}
+  .semifull-5-0>.semifull-box-col{width: calc(var(--main-column) * 0.5);}
+  .semifull-6-0>.semifull-box-col{width: calc(var(--main-column) * 0.4);}
+  .semifull-7-0>.semifull-box-col{width: calc(var(--main-column) * 0.3);}
+}
+
+/*Ejemplo semifull con bloque full a la izquierda ocupando el 50% de la pantalla
+<div class="semifull-row semifull-left semifull-5-0">
+  <div class="semifull-full-col">full</div>
+  <div class="semifull-box-col">box</div>
+</div>
+/*Ejemplo semifull con bloque full a la derecha ocupando el 30% de la pantalla
+<div class="semifull-row semifull-right semifull-3-0">
+  <div class="semifull-box-col">box</div>
+  <div class="semifull-full-col">full</div>
+</div>
+*/
+
+/*GRID*/
+/*Flexis de varios elementos iguales (cómo productos o bloques de otro tipo)*/
+/*El objetivo es que en PC, los elementos se distribuyan de forma homogenea ocupando los bordes. En dispositivos más pequeños no hace falta que se ajuste a los bordes*/
+/*Cada uno de los elementos tiene que tener la clase grid-bloque-wr, flx-d, flx-t y flx-m y estar dentro de un contenedor flexi*/
+/*Los bloques interiores tienen que tener clase grid-bloque*/
+/*Bloques*/
+.grid-bloque-wr{display: flex; justify-content: center; position: relative;}
+.grid-bloque-wr .grid-bloque{width: 90%;}
+
+@media only screen and (min-width:1024px){
+  .flx-d-1-3.grid-bloque-wr:nth-child(3n + 1), .flx-d-1-4.grid-bloque-wr:nth-child(4n + 1), .flx-d-1-5.grid-bloque-wr:nth-child(5n + 1), .flx-d-1-6.grid-bloque-wr:nth-child(6n + 1){justify-content: flex-start;}
+  .flx-d-1-3.grid-bloque-wr:nth-child(3n), .flx-d-1-4.grid-bloque-wr:nth-child(4n), .flx-d-1-5.grid-bloque-wr:nth-child(5n), .flx-d-1-6.grid-bloque-wr:nth-child(6n){justify-content: flex-end;}
+
+  .flx-d-1-4.grid-bloque-wr:nth-child(4n + 2){left: -0.5%;}
+  .flx-d-1-4.grid-bloque-wr:nth-child(4n + 3){left: 0.5%;}
+}
+
+/*Ejemplo de bloques grid*/
+/*
+<div class="flexi">
+    <div class="grid-bloque-wr flx-d-1-3 flx-t-1-2 flx-m-1">
+      <div class="grid-bloque">
+        <a href="">
+          <img src="imagen de un post">
+          <h3>Título de un post</h3>
+        </a>
+      </div>
+    </div>
+</div>
+*/
+
+/****************************************
+ESPACIOSESPACIOSESPACIOSESPACIOSESPACIOS
+ESPACIOSESPACIOSESPACIOSESPACIOSESPACIOS  ESPACIOS / SEPARADORES
+ESPACIOSESPACIOSESPACIOSESPACIOSESPACIOS
+****************************************/
+
+/*ESPACIOS*/
+/*Paddings*/
+.s-padding, div.padding[class*="flx"], div.padding[class*='flexi-']>*{padding: var(--padding);}
+.p-top{padding-top: var(--padding);} .p-bottom{padding-bottom: var(--padding);} .p-left{padding-left: var(--padding);} .p-right{padding-right: var(--padding);}
+.p-sides{padding-left: var(--padding); padding-right: var(--padding);} .p-cell{padding-top: var(--padding); padding-bottom:  var(--padding);}
+.p-max-top{padding-top: var(--max-pad);} .p-max-bottom{padding-bottom: var(--max-pad);} .p-max-left{padding-left: var(--max-pad);} .p-max-right{padding-right: var(--max-pad);}
+.no-pad-top{padding-top: 0px!important;} .no-pad-bottom{padding-bottom: 0px!important;} .no-pad-left{padding-left: 0px!important;} .no-pad-right{padding-right: 0px!important;}
+
+
+/*Margins*/
+.s-margin, div.margin[class*="flx"], div.margin[class*='flexi-']>*{margin: var(--margin);}
+.m-top{margin-top: var(--margin);} .m-bottom{margin-bottom: var(--margin);} .m-left{margin-left: var(--margin);} .m-right{margin-right: var(--margin);}
+.m-sides{margin-left: var(--margin); margin-right: var(--margin);} .m-cell{margin-top: var(--margin); margin-bottom:  var(--margin);}
+.m-max-top{margin-top: var(--max-margin);} .m-max-bottom{margin-bottom: var(--max-margin);} .m-max-left{margin-left: var(--max-margin);} .m-max-right{margin-right: var(--max-margin);}
+.no-margin-top{margin-top: 0px!important;} .no-margin-bottom{margin-bottom: 0px!important;} .no-margin-left{margin-left: 0px!important;} .no-margin-right{margin-right: 0px!important;}
+
+/*Separadores*/
+span[class^="espacio-"]{display: block;}
+.espacio-clear{height: 1px;}
+.espacio-10{height: 10px;} .espacio-20{height: 20px;} .espacio-30{height: 30px;} .espacio-40{height: 40px;} .espacio-50{height: 50px;} .espacio-60{height: 60px;} .espacio-70{height: 70px;} .espacio-80{height: 80px;}
+.espacio-90{height: 90px;} .espacio-100{height: 100px;} .espacio-120{height: 120px;} .espacio-140{height: 140px;} .espacio-160{height: 160px;} .espacio-180{height: 180px;} .espacio-200{height: 200px;} .espacio-300{height: 300px;}
+.espacio-400{height: 400px;} .espacio-500{height: 500px;} .espacio-600{height: 600px;} .espacio-700{height: 700px;} .espacio-800{height: 800px;} .espacio-900{height: 900px;} .espacio-1000{height: 1000px;}
+
+/****************************************
+RESPONSIVERESPONSIVERESPONSIVERESPONSIVE
+RESPONSIVERESPONSIVERESPONSIVERESPONSIVE  RESPONSIVE
+RESPONSIVERESPONSIVERESPONSIVERESPONSIVE
+****************************************/
+
+/*SÓLO PARA DETERMINADOS DISPOSITIVOS*/
+.solo-d, div.solo-d{display:none!important;}
+@media only screen and (min-width:501px){
+  .solo-d, div.solo-d{display: inherit!important;}
+}
+.solo-m, div.solo-m{display: none!important;}
+@media only screen and (max-width:500px){
+  .solo-m, div.solo-m{display: inherit!important;}
+}
+
+/****************************************
+INTERACTIVOINTERACTIVOINTERACTIVOINTERAC
+DINÁMICODINÁMICODINÁMICODINÁMICODINÁMICO ELEMENTOS DINÁMICOS / INTERACTIVOS
+INTERACTIVOINTERACTIVOINTERACTIVOINTERAC
+****************************************/
+
+/*BLOQUE CON CAMBIO DE FONDO AUTOMÁTICO*/
+
+/*El bloque con fondo dinámico tiene que tener una clase "mkt_dynamic_bg" y los fondos cambiantes tienen que ser hijos directos div con clase "mkt_dynamic_bg_1 (en adeante)"
+El contenido del bloque tiene que tener una propiedad "position" para que se vea por encima de los fondos.*/
+
+/*Contenedor y slides*/
+.mkt_dynamic_bg{position: relative;}
+.mkt_dynamic_bg>div[class^="mkt_dynamic_bg"]{position: absolute; background-size: cover; width: 100%; height: 100%;}
+/*Definir la animación de cada slide y definir los keyframes*/
+.mkt_dynamic_bg_2 {animation: dynamic_bg_2 var(--dynamic_bg-time) linear infinite normal;}
+.mkt_dynamic_bg_3 {animation: dynamic_bg_3 var(--dynamic_bg-time) linear infinite normal;}
+.mkt_dynamic_bg_4 {animation: dynamic_bg_4 var(--dynamic_bg-time) linear infinite normal;}
+.mkt_dynamic_bg_5 {animation: dynamic_bg_5 var(--dynamic_bg-time) linear infinite normal;}
+
+/*Ejemplo de keyframes con 4 imágenes de fondo
+@keyframes dynamic_bg_2{0%{opacity: 0;} 22%{opacity: 0;} 28%{opacity: 1;} 47%{opacity: 1;} 53%{opacity:0;} 100%{opacity:0;}}
+@keyframes dynamic_bg_3{0%{opacity: 0;} 47%{opacity: 0;} 53%{opacity: 1;} 72%{opacity: 1;} 78%{opacity:0;} 100%{opacity:0;}}
+@keyframes dynamic_bg_4{0%{opacity: 0;} 72%{opacity: 0;} 78%{opacity: 1;} 95%{opacity: 1;} 100%{opacity:0;}}
+/*Ejemplo de keyframes con 3 imágenes de fondo
+@keyframes dynamic_bg_2{0%{opacity: 0;} 30%{opacity: 0;} 36%{opacity: 1;} 70%{opacity: 1;} 80%{opacity:0;} 100%{opacity:0;}}
+@keyframes dynamic_bg_3{0%{opacity: 0;} 60%{opacity: 0;}66%{opacity: 1;}94%{opacity: 1;}100%{opacity: 0;}}
+/*
+
+/*MODALES Y POPUPS*/
+.mkt_modal{position: fixed; width: 100vw; height: 100vh; top: 0px; left: 0px; z-index: 9999999999999; display: flex; justify-content: center; background-color: #00000050;}
+.mkt_modal.hidden{display: none;}
+.mkt_modal_close{position: absolute; top: 30px; right: 30px; cursor: pointer;}
+.mkt_modal_open{cursor: pointer;}
+
+/*Ejemplo de modal
+<span id="ejemplo" class="mkt_modal_open serif">ABRIR MODAL</span>
+<div class="mkt_modal mkt_modal_ejemplo hidden">
+  <span class="mkt_modal_close">CERRAR</span>
+  <div class="mkt_modal_cont">CONTENIDO DEL MODAL</div>
+</div>
+*/
+
+/*DEV_TEST WINDOW*/
+#mkt_dev_test{position: absolute; background: black; color: white; padding: 0px 15px 15px 15px; border-radius: 6px; z-index: 9999999999; top: 50px; left: 50px; height: 200px; width: 400px; resize: both; overflow: scroll;}
+#mkt_dev_test_move{z-index: 10; cursor: move; height: 20px; border-top-left-radius: 3px; border-top-right-radius:3px; margin-left: -15px; margin-right: -15px;
+  background: rgb(250,58,71);
+  background: -moz-linear-gradient(90deg, rgba(250,58,71,1) 21%, rgba(0,223,223,1) 74%, rgba(28,110,176,1) 100%);
+  background: -webkit-linear-gradient(90deg, rgba(250,58,71,1) 21%, rgba(0,223,223,1) 74%, rgba(28,110,176,1) 100%);
+  background: linear-gradient(90deg, rgba(250,58,71,1) 21%, rgba(0,223,223,1) 74%, rgba(28,110,176,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fa3a47",endColorstr="#1c6eb0",GradientType=1);}
+
+/*LIGHTBOX*/
+.mkt_lightbox_cont{position: fixed; top: 0px; left: 0px; width: 100vw; height: 100vh; z-index: 999999; justify-content: center; align-items: center; display: none;}
